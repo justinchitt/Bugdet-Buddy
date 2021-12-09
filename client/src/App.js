@@ -74,7 +74,7 @@ let todaysMonth = monthsInWords[monthsInNumbers]
         <NavBar user={user} setUser={setUser}/>
         <Switch>
           <Route exact path="/">
-            {user ? <UserHome /> : <SignupLogin setUser={setUser}/>}
+            {user ? <UserHome user={user} budgets={budgets}/> : <SignupLogin setUser={setUser}/>}
           </Route>
           <Route exact path="/budgetform">
             <BudgetForm  user={user} setBudgets={setBudgets}todaysMonth={todaysMonth} year={year}/>

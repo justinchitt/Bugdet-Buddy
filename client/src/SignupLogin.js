@@ -11,7 +11,7 @@ function SignupLogin({setUser}) {
 
     return (
         <>
-            {wasClicked ? <Signup setUser={setUser} />:<Login setUser={setUser} />}
+        {wasClicked ? <Signup setWasClicked={setWasClicked}/>:<Login setUser={setUser} />}
 
             <button onClick={handleClick}>{!wasClicked?"Sign Up":"Already have an account?"}</button>
         </>

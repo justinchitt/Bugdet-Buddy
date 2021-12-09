@@ -29,7 +29,8 @@ class BudgetsController < ApplicationController
     def update
         budget = Budget.find(params[:id])
         budget.update(budget_params)
-        render json: budget
+        new_budget = Budget.find(params[:id])
+        render json: new_budget
     end
 
     private
