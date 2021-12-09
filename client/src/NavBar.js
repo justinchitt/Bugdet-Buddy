@@ -8,7 +8,7 @@ function NavBar({user, setUser}) {
         }).then(() => {
             setUser(null)
         })
-      }
+    }
 
     return (
         <div>

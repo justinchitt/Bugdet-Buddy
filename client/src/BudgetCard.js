@@ -5,26 +5,26 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 import {useState} from "react"
 import { chartColors } from "./colors";
 
-ChartJS.register(ArcElement, Tooltip, Legend);
 
 function BudgetCard({budget, handleDeleteItem, year, todaysMonth, setBudgets}) {
-    const [wasClicked, setWasClicked] = useState(false)
-    const [clickedEdit, setClickedEdit] = useState(false)
-
-    function renderEdit(){
-        if (year === budget.month.year && todaysMonth === budget.month.month) {
-            return <button onClick={handleWasClickedEdit}>{clickedEdit?"Hide Edit":"Edit"}</button>
-        }
+  const [wasClicked, setWasClicked] = useState(false)
+  const [clickedEdit, setClickedEdit] = useState(false)
+  
+  function renderEdit(){
+    if (year === budget.month.year && todaysMonth === budget.month.month) {
+      return <button onClick={handleWasClickedEdit}>{clickedEdit?"Hide Edit":"Edit"}</button>
     }
-
-    function handleClicked() {
-        setWasClicked(current => !current)
-    }
-
-    function handleWasClickedEdit() {
-        setClickedEdit(current => !current)
-    }
-
+  }
+  
+  function handleClicked() {
+    setWasClicked(current => !current)
+  }
+  
+  function handleWasClickedEdit() {
+    setClickedEdit(current => !current)
+  }
+  ChartJS.register(ArcElement, Tooltip, Legend);
+  
     const options = {
         legend: {
           display: false,
@@ -36,7 +36,7 @@ function BudgetCard({budget, handleDeleteItem, year, todaysMonth, setBudgets}) {
           }
         }
       };
-
+      
       const data = {
         maintainAspectRatio: false,
         responsive: false,
@@ -49,11 +49,13 @@ function BudgetCard({budget, handleDeleteItem, year, todaysMonth, setBudgets}) {
           }
         ]
       };
-
-    return (
+      
+      return (
         <div>
             <p>{budget.month.month}</p>
             <p>{budget.month.year}</p>
+            <p>Total Expenses: ${budget.total_expenses}</p>
+            <p>Remaining: ${budget.left_over}</p>
             <button onClick={handleClicked}>{wasClicked ? "Hide Details" : "Show Details"}</button>
             <DeleteButton handleDeleteItem={handleDeleteItem} id={budget.id}/>
             {renderEdit()}
@@ -73,15 +75,10 @@ function BudgetCard({budget, handleDeleteItem, year, todaysMonth, setBudgets}) {
                 <p>Recreational: ${budget.recreational}</p>
                 <p>Savings/Investments: ${budget.savings_or_investments}</p>
                 <p>Other: ${budget.other}</p>
-                <p>Total Expenses: ${budget.total_expenses}</p>
-                <p>Remaining: ${budget.left_over}</p>
                 <Doughnut data={data} options={options} />
             </div>:null}
         </div>
     )
-}
-
-// labels: ["Car Payment", "Car Insurance", "Mortgage/Rent", "Internet", "Food/Groceries", "Clothing", "Utilities", "Credit Card Debt", "Cable", "recreational", "Savings/Investments", "Other"]
-// data: [budget.car_payment, budget.car_insurance, budget.health_insurance, budget.mortgage_or_rent, budget.internet, budget.food_or_groceries, budget.clothing, budget.utilities, budget.credit_card_debt, budget.cable, budget.recreational, budget.savings_or_investments, budget.other]
-
+  }
+  
 export default BudgetCard

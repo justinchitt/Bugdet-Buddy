@@ -1,11 +1,11 @@
 import BudgetCard from "./BudgetCard"
 
 function ViewAll({budgets, handleDeleteItem, year, todaysMonth, setBudgets}) {
-    
-    if (!budgets) {
-        return <p>Loading...</p>
-    }
 
+    if (!budgets[0]) {
+        return <p>You currently do not have any budgets</p>
+    }
+    
     let budgetCards = budgets.map(handleMap)
     
     function handleMap(budget) {
@@ -13,6 +13,7 @@ function ViewAll({budgets, handleDeleteItem, year, todaysMonth, setBudgets}) {
     }
     return(
         <div>
+            <h2>All Budgets</h2>
             {budgetCards}
         </div>
     )

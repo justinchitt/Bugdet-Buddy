@@ -33,7 +33,6 @@ function EditBudget({budget, setBudgets, setClickedEdit}){
     let remaining = formData.monthly_income - totalExpenses
     copyOfFormData.left_over = remaining
 
-    console.log(copyOfFormData)
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -44,7 +43,13 @@ function EditBudget({budget, setBudgets, setClickedEdit}){
         })
         .then(resp => resp.json())
         .then(budget => {
-            setBudgets(current => ([budget, ...current]))
+            setBudgets(current => current.map(oldBudgets => {
+                if (oldBudgets.id === budget.id) {
+                    return {...oldBudgets, ...budget}
+                } else {
+                    return oldBudgets
+                }
+            }))
             setFormData({
                 monthly_income: 0,
                 mortgage_or_rent: 0,
