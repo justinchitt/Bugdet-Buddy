@@ -1,4 +1,3 @@
-import Header from "./Header"
 import NavBar from "./NavBar";
 import UserHome from "./UserHome";
 import BudgetForm from "./BudgetForm";
@@ -61,7 +60,6 @@ let todaysMonth = monthsInWords[monthsInNumbers]
     if (!user) {
       return (
         <>
-        <Header />
         <SignupLogin setUser={setUser}/>
         </>
       )
@@ -69,7 +67,6 @@ let todaysMonth = monthsInWords[monthsInNumbers]
 
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
         <NavBar user={user} setUser={setUser}/>
         <Switch>

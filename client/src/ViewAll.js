@@ -14,7 +14,9 @@ function ViewAll({budgets, handleDeleteItem, year, todaysMonth, setBudgets}) {
     return(
         <div>
             <h2>All Budgets</h2>
+            <div>
             {budgetCards}
+            </div>
         </div>
     )
 }

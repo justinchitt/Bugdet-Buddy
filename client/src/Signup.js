@@ -41,7 +41,7 @@ function Signup({setWasClicked}) {
 
     return (
         <>
-            <form onSubmit={handleSignup}>
+            <form className='forms' onSubmit={handleSignup}>
                 <label>Username: </label> <input type="text" name="username" onChange={handleChange} value={signupData.username} required></input>
                 <label>First Name: </label> <input type="text" name="first_name" onChange={handleChange} value={signupData.first_name} required></input>
                 <label>Last Name: </label> <input type="text" name="last_name" onChange={handleChange} value={signupData.last_name} required></input>

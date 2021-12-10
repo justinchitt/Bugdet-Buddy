@@ -9,6 +9,10 @@ import { chartColors } from "./colors";
 function BudgetCard({budget, handleDeleteItem, year, todaysMonth, setBudgets}) {
   const [wasClicked, setWasClicked] = useState(false)
   const [clickedEdit, setClickedEdit] = useState(false)
+
+  if(!budget) {
+    return <p>Loading...</p>
+  }
   
   function renderEdit(){
     if (year === budget.month.year && todaysMonth === budget.month.month) {
@@ -51,11 +55,11 @@ function BudgetCard({budget, handleDeleteItem, year, todaysMonth, setBudgets}) {
       };
       
       return (
-        <div>
-            <p>{budget.month.month}</p>
-            <p>{budget.month.year}</p>
-            <p>Total Expenses: ${budget.total_expenses}</p>
-            <p>Remaining: ${budget.left_over}</p>
+        <div className="cards">
+            <p className="givespace">{budget.month.month}</p>
+            <p className="givespace">{budget.month.year}</p>
+            <p className="givespace"> Total Expenses: ${budget.total_expenses}</p>
+            <p className="givespace"> Remaining: ${budget.left_over}</p>
             <button onClick={handleClicked}>{wasClicked ? "Hide Details" : "Show Details"}</button>
             <DeleteButton handleDeleteItem={handleDeleteItem} id={budget.id}/>
             {renderEdit()}

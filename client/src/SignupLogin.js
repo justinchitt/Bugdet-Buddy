@@ -10,11 +10,13 @@ function SignupLogin({setUser}) {
     }
 
     return (
-        <>
+        <div id="loginsignup">
+        <h1>Budget Buddy</h1>
         {wasClicked ? <Signup setWasClicked={setWasClicked}/>:<Login setUser={setUser} />}
-
+        <div id="signup">
             <button onClick={handleClick}>{!wasClicked?"Sign Up":"Already have an account?"}</button>
-        </>
+            </div>
+        </div>
     )
 }
 

@@ -2,11 +2,15 @@ import {Link} from "react-router-dom"
 
 function UserHome({user, budgets}) {
     
+if(!budgets[0]){
+    return <h1>Loading</h1>
+}
+
     let mostRecent = budgets[0]
 
 
     return (
-        <div>
+        <div id="home">
             <h2>Welcome, {user.first_name}</h2>
             <p>What would you like to do today:</p>
             <ul>
@@ -29,8 +33,8 @@ function UserHome({user, budgets}) {
                 <p>Recreational: ${mostRecent.recreational}</p>
                 <p>Savings/Investments: ${mostRecent.savings_or_investments}</p>
                 <p>Other: ${mostRecent.other}</p>
-                <p>Total Expenses: ${mostRecent.total_expenses}</p>
-                <p>Remaining: ${mostRecent.left_over}</p>
+                <p className="bold">Total Expenses: ${mostRecent.total_expenses}</p>
+                <p className="bold">Remaining: ${mostRecent.left_over}</p>
             </div>:null}
         </div>
     )
