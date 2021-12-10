@@ -83,6 +83,7 @@ function BudgetForm({user, setBudgets, todaysMonth, year}) {
     return(
         <div>
             <h2 id="h2">Budget for {copyOfFormData.month} {copyOfFormData.year}</h2>
+            {remaining > 0 ? null : remaining === 0 ? null : <p id="error">Your remaining amount is negative or invalid, please re-evaluate your expenses, income or use a 0</p>}
             <form id="budgetform" onSubmit={handleSubmit}>
                 <label>Monthly Income: $ <input name="monthly_income" type="number" min="0" step="0.01" value={formData.monthly_income} onChange={handleChange} required></input></label>
                 <label>Mortgage/Rent: $ <input name="mortgage_or_rent" type="number" min="0" step="0.01" value={formData.mortgage_or_rent} onChange={handleChange} required></input></label>
@@ -100,10 +101,12 @@ function BudgetForm({user, setBudgets, todaysMonth, year}) {
                 <label>Other: $ <input name="other" type="number" min="0" step="0.01" value={formData.other} onChange={handleChange} required></input></label>
                 <p className="bold">Total Expenses: {copyOfFormData.total_expenses || copyOfFormData.total_expenses === 0 ? `$${copyOfFormData.total_expenses}` : "Calculating..."}</p>
                 <p className="bold">Remaining: {copyOfFormData.left_over || copyOfFormData.left_over === 0 ? `$${copyOfFormData.left_over}` : "Calculating..."}</p>
-                {remaining > 0 ? <button type="submit">Submit</button> : remaining === 0 ? null : <p id="error">Your remaining amount is negative or invalid, please re-evaluate your expenses, income or use a 0</p>}
+                {remaining > 0 ? <button type="submit">Submit</button> : null}
             </form>
         </div>
     )
 }
+
+{/* <p id="error">Your remaining amount is negative or invalid, please re-evaluate your expenses, income or use a 0</p> */}
 
 export default BudgetForm

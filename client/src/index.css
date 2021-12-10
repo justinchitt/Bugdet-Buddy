@@ -188,6 +188,7 @@ ul {
  #error {
     border: solid yellowgreen;
     border-width: 1px;
+    text-align: center;
  }
 
  .cards {

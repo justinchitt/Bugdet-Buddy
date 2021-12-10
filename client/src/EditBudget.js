@@ -75,6 +75,7 @@ function EditBudget({budget, setBudgets, setClickedEdit}){
     return(
         <div>
             <h2>Edit for {budget.month.month} {budget.month.year}</h2>
+            {remaining > 0 ? null : remaining === 0 ? null : <p id="error">Your remaining amount is negative or invalid, please re-evaluate your expenses, income or use a 0</p>}
             <form onSubmit={handleSubmit} className="editform">
                 <label>Monthly Income: $ </label><input name="monthly_income" type="number" min="0" value={formData.monthly_income} onChange={handleChange} required></input>
                 <label>Mortgage/Rent: $ </label><input name="mortgage_or_rent" type="number" min="0" value={formData.mortgage_or_rent} onChange={handleChange} required></input>
@@ -94,7 +95,7 @@ function EditBudget({budget, setBudgets, setClickedEdit}){
                 <label>Other: $ </label><input name="other" type="number" min="0" value={formData.other} onChange={handleChange} required></input>
                 <p>Total Expenses: {copyOfFormData.total_expenses || copyOfFormData.total_expenses === 0 ? `$${copyOfFormData.total_expenses}` : "Calculating..."}</p>
                 <p>Remaining: {copyOfFormData.left_over || copyOfFormData.left_over === 0 ? `$${copyOfFormData.left_over}` : "Calculating..."}</p>
-                {remaining > 0 ? <button type="submit">Finished</button> : remaining === 0 ? null : <p>Your remaining amount is negative, please re-evaluate your expenses and income</p>}
+                {remaining > 0 ? <button type="submit">Finished</button> : null}
             </form>
         </div>
     )

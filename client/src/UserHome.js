@@ -4,7 +4,7 @@ function UserHome({user, budgets}) {
     
 if(!budgets[0]){
     return <h1>Loading</h1>
-}
+} else {
 
     let mostRecent = budgets[0]
 
@@ -37,7 +37,7 @@ if(!budgets[0]){
                 <p className="bold">Remaining: ${mostRecent.left_over}</p>
             </div>:null}
         </div>
-    )
+    )}
 }
 
 export default UserHome
