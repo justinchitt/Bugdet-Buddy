@@ -10,14 +10,6 @@ function App() {
   const [user, setUser] = useState(null)
   const [budgets, setBudgets] = useState([])
 
-  useEffect(fetchBudgets, [])
-
-  function fetchBudgets() {
-    fetch("/budgets")
-    .then(resp => resp.json())
-    .then(setBudgets)
-  }
-
   useEffect(fetchUser, [])
   
   function fetchUser() {
@@ -27,6 +19,14 @@ function App() {
         resp.json().then(user => setUser(user))
       }
     })
+  }
+
+  useEffect(fetchBudgets, [])
+
+  function fetchBudgets() {
+    fetch(`/budgets/`)
+    .then(resp => resp.json())
+    .then(setBudgets)
   }
 
   function handleDeleteItem(deleted){

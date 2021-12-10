@@ -42,6 +42,4 @@ Budget.create(month_id: april.id, user_id: justinchitt.id, monthly_income: 4502.
 
 
 
-
-
 puts "Seeds Generated"
