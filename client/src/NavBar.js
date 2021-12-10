@@ -11,7 +11,8 @@ function NavBar({user, setUser}) {
     }
 
     return (
-        <div>
+        <div id="head">
+            <h1>Budget Buddy</h1>
             <ul>
                 <Link exact to="/">Home</Link>
                 {user ? <Link to="/budgetform">Add Budget</Link> : null}

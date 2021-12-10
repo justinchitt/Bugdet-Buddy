@@ -25,13 +25,15 @@ function Login({setUser}) {
     }
 
     return (
-        <>
-            <form onSubmit={handleLogin}>
-                <label>Username:</label> <input name="username" type="text" value={loginData.username} onChange={handleChange} required></input>
-                <label>Password:</label> <input name="password" type="password" value={loginData.password} onChange={handleChange} required></input>
-                <button type="submit">Login</button>
+        <form onSubmit={handleLogin}>
+                <div className="forms">
+                    <label>Username:</label> <input name="username" type="text" value={loginData.username} onChange={handleChange} required></input>
+                    <br></br>
+                    <label>Password:</label> <input name="password" type="password" value={loginData.password} onChange={handleChange} required></input>
+                    <br></br>
+                    <button type="submit">Login</button>
+                </div>
             </form>
-        </>
     )
 }
 

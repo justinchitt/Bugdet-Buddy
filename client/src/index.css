@@ -1,0 +1,234 @@
+body {
+    background-color: rgb(255, 255, 255);
+}
+#head {
+    background-color: yellowgreen;
+    padding-left: 1%;
+    padding-top: 1px;
+    width: 98.5%;
+    color:white;
+}
+ul {
+    padding-bottom: 1%;
+    display: flex;
+    justify-content: start;
+}
+
+.App{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#head ul a{
+    padding-right: 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+#head ul a:hover{
+    font-size: 20px;
+}
+
+#loginsignup {
+    margin-top: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#loginsignup div{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width:20%;
+    background-color: yellowgreen;
+    padding-bottom: 1%;
+}
+
+#loginsignup h1{
+    padding-top: 1%;
+    padding-bottom: 1%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width:20%;
+    background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+    border: solid yellowgreen;
+    border-width: 1px;
+}
+
+#signup button {
+    padding-top: 5px;
+    background-color: transparent;
+    border: none;
+}
+
+#signup button:hover{
+    cursor: pointer;
+    color: purple;
+}
+
+.forms{
+    padding-top: 1%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    background-color: yellowgreen;
+    width: 20%;
+    margin:auto;
+}
+.forms button{
+    margin-top: 5px;
+}
+
+.forms button {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	background-color:#ededed;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#111111;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.forms button:hover {
+	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
+}
+.forms button:active {
+	position:relative;
+	top:1px;
+}
+
+        
+
+.forms input {
+    background-color: rgb(238, 238, 238);
+    border: none;
+}
+#signup {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+#home {
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+#home div {
+    border: solid yellowgreen;
+    border-width: 2px;
+    padding-bottom: 5%;
+    width:70%;
+    margin: auto;
+}
+
+#home ul{
+    display: flex;
+    justify-content: center;
+}
+
+#home ul a{
+    padding-right: 30px;
+    padding-left: -30px;
+    text-decoration: none;
+    color: rgb(108, 161, 29);
+}
+
+.bold{
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(127, 170, 42);
+}
+#budgetform label input{
+    display: flex;
+    justify-content: left;
+    padding-bottom: 10px;
+    border-color: rgb(0, 0, 0);
+    border-width: 1px;
+    text-align: center;
+    font-size: 16px;
+    color: yellowgreen;
+    padding-bottom: 1px;;
+    width: 70%;
+}
+ #budgetform {
+     width: 15%;
+     margin: auto;
+ }
+
+ #h2 {
+     text-align: center;
+ }
+
+ #budgetform button {
+    box-shadow:inset 0px 1px 0px 0px #a4e271;
+	background:linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+	background-color:#89c403;
+	border:1px solid #74b807;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #528009;
+ }
+
+ #error {
+    border: solid yellowgreen;
+    border-width: 1px;
+ }
+
+ .cards {
+    border: 1px solid yellowgreen;
+    background-color: rgb(190, 221, 128);
+    padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    margin: 30px;
+    text-align: center;
+    width: 92%;
+    height: 2%;
+    padding-left: 40px;
+    padding-right: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 1%;
+    color: black;
+
+ }
+
+ .givespace{
+     margin-right: 20px;
+ }
+
+ .cards button{
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:4px 14px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+
+ }
+
