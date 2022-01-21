@@ -26,6 +26,11 @@ class BudgetsController < ApplicationController
         render json: budget
     end
 
+    def user_budgets
+        budgets = Budget.all.where(user_id: params[:id])
+        render json: budgets, status: :ok
+    end
+
     def update
         budget = Budget.find(params[:id])
         budget.update(budget_params)

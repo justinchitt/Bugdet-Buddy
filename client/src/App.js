@@ -21,12 +21,18 @@ function App() {
     })
   }
 
-  useEffect(fetchBudgets, [])
+  useEffect(fetchBudgets, [user])
 
   function fetchBudgets() {
-    fetch(`/budgets/`)
-    .then(resp => resp.json())
-    .then(setBudgets)
+    if(!user){return}
+    fetch(`/budgets/user/${user.id}`)
+    .then(resp => {
+      if (resp.ok) {
+        resp.json().then(resp => {
+          setBudgets(resp)
+        })
+      }
+    })
   }
 
   function handleDeleteItem(deleted){
